@@ -1,0 +1,4 @@
+auto wlan0
+allow-hotplug wan0
+iface wlan0 inet static
+    address 10.10.10.1/24

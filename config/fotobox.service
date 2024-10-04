@@ -1,0 +1,12 @@
+[Unit]
+Description=Turn your Raspberry Pi into a photo booth with a web server.
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/fotobox
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
