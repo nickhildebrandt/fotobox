@@ -38,7 +38,7 @@ Here are the specific GPIO pin connections used in the project:
                          python3-picamera2 \
                          python3-pil \
                          python3-numpy \
-                         nsmasq \
+                         dnsmasq \
                          hostapd
     ```
 
@@ -51,15 +51,19 @@ Here are the specific GPIO pin connections used in the project:
     ```
 
 3. **Configure and Start System Services**:
-    After installing the software, configure and start the required services:
+    After installing the software, configure the required services:
     ```bash
     sudo systemctl daemon-reload
     sudo systemctl enable dnsmasq.service
-    sudo systemctl restart dnsmasq.service
     sudo systemctl unmask hostapd.service
-    sudo systemctl restart hostapd.service
+    sudo systemctl enable hostapd.service
     sudo systemctl enable fotobox.service
-    sudo systemctl restart fotobox.service
+    ```
+
+4. **Reboot**:
+    The photobooth services will start automatically after the reboot.
+    ```bash
+    sudo reboot
     ```
 
 ### Configuration: `/etc/fotobox.ini`
